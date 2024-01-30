@@ -42,6 +42,6 @@ mkdir -p $SLURM_INSTALL_DIR/etc/plugstack.conf.d/
 echo -e "include $SLURM_INSTALL_DIR/etc/plugstack.conf.d/*" >> $SLURM_INSTALL_DIR/etc/plugstack.conf
 ln -fs /usr/local/share/pyxis/pyxis.conf $SLURM_INSTALL_DIR/etc/plugstack.conf.d/pyxis.conf
 
-mkdir -p /run/pyxis/ /tmp/enroot/data /opt/enroot/
-chmod 777 -R /tmp/enroot /opt/enroot
+mkdir -p /run/pyxis/ /scratch/enroot/
+chmod 1777 -R /scratch/enroot
 ################################################################################

@@ -1,0 +1,35 @@
+[
+  {
+    "InstanceGroupName": "controller-hp01",
+    "InstanceType": "ml.c5.4xlarge",
+    "InstanceCount": 1,
+    "LifeCycleConfig": {
+      "SourceS3Uri": "s3://sagemaker-lifecycle-e047716c93/LifeCycleScripts/base-config/",
+      "OnCreate": "on_create.sh"
+    },
+    "ExecutionRole": "arn:aws:iam::851725452364:role/AmazonSagemakerExecutionRole",
+    "ThreadsPerCore": 2
+  },
+  {
+    "InstanceGroupName": "hp01-login-nodes",
+    "InstanceType": "ml.m5.8xlarge",
+    "InstanceCount": 1,
+    "LifeCycleConfig": {
+      "SourceS3Uri": "s3://sagemaker-lifecycle-e047716c93/LifeCycleScripts/base-config/",
+      "OnCreate": "on_create.sh"
+    },
+    "ExecutionRole": "arn:aws:iam::851725452364:role/AmazonSagemakerExecutionRole",
+    "ThreadsPerCore": 2
+  },
+  {
+    "InstanceGroupName": "hp01-compute-nodes",
+    "InstanceType": "ml.p4de.24xlarge",
+    "InstanceCount": 4,
+    "LifeCycleConfig": {
+      "SourceS3Uri": "s3://sagemaker-lifecycle-e047716c93/LifeCycleScripts/base-config/",
+      "OnCreate": "on_create.sh"
+    },
+    "ExecutionRole": "arn:aws:iam::851725452364:role/AmazonSagemakerExecutionRole",
+    "ThreadsPerCore": 1
+  }
+]

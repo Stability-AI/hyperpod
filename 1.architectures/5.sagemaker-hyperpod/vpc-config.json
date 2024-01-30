@@ -1,0 +1,4 @@
+{ 
+  "SecurityGroupIds": ["sg-043eda69e32c2ce96"],
+  "Subnets":["subnet-021130f02976b22bc"] 
+}

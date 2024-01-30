@@ -152,8 +152,12 @@ def main(args):
         ExecuteBashScript("./start_slurm.sh").run(node_type, ",".join(controllers))
 
         # Note: Uncomment the below lines to install docker and enroot
-        # ExecuteBashScript("./utils/install_docker.sh").run()
-        # ExecuteBashScript("./utils/install_enroot_pyxis.sh").run(node_type)
+        ExecuteBashScript("./utils/install_docker.sh").run()
+        ExecuteBashScript("./utils/20.make.raid0.nvme.sh").run(node_type)
+        ExecuteBashScript("./utils/30.install.dcgmi.sh").run(node_type)
+        ExecuteBashScript("./utils/40.move.docker.scratch.sh").run(node_type)
+        ExecuteBashScript("./utils/50.wekafs.sh").run(node_type)
+        ExecuteBashScript("./utils/install_enroot_pyxis.sh").run(node_type)
         
     print("[INFO]: Success: All provisioning scripts completed")
 

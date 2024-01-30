@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "workload_manager": "slurm",
+  "controller_group": "controller-hp01",
+  "login_group": "hp01-login-nodes",
+  "worker_groups": [
+    {
+      "instance_group_name": "hp01-compute-nodes",
+      "partition_name": "test"
+    }
+  ],
+  "fsx_dns_name": "fs-0bbf076143a1022f6.fsx.us-west-2.amazonaws.com",
+  "fsx_mountname": "j4gk7bev"
+}
